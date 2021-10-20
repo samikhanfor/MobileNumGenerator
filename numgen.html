@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script>
+            
+            function gen(){
+                let thirdnum=document.getElementById('thirdnum')
+                for(var d=0;d<=9;d++)
+                    {
+                        thirdnum.innerHTML+="<option>5"+d+"</option>";
+                    }
+            }
+                                     
+        function generate(){
+                   let thirdnum=document.getElementById('thirdnum')
+                   let intKey=document.getElementById('intKey')
+                   let many=document.getElementById('many')
+                   let message=document.getElementById('message')
+                   let numbers=document.getElementById('numbers')   
+                   numbers.innerHTML=""  
+                  for(var d=1;d<=many.value;d++)
+                {                   
+                    let val=Math.floor(1000000 + Math.random() * 9000000);                     
+                    numbers.innerHTML +="<a href='http://wa.me/"+intKey.value+thirdnum.value+val+"?text="+message.value+"'>+"+intKey.value+thirdnum.value+val+"</a><br>";
+            	}
+            }
+
+            
+            
+                                            
+            
+        </script>
+    </head>
+    <body  onload="gen()">
+        <h2>Whatsapp Mobile Number Generator <small>ver0.1 (By Sami Khanfor)  </small></h2><br> 
+        Mobile Number: +<input id="intKey" type="number" min="1" value="966"> <select id="thirdnum"></select> XXXXXXX<br>
+        Whatsapp Message:<textarea id="message"></textarea><br>
+        How Many? <input id="many" type="number" min="1" value="10"><br>
+        <button type="button" onclick="generate()">Generate</button>
+        
+        <p id="numbers"></p>
+    </body>
+</html>
